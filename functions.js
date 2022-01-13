@@ -294,7 +294,6 @@ export function makeModelsStringWithReduce(arr) {
 
 /*
 (add all ages)
-
 Output: 14 
  */
 
