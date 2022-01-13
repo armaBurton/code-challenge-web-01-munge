@@ -266,18 +266,8 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    // const newArr = [];
-    // const secondArr = [];
-    // return arr.map(a => {
-    //     if(a.make === `chevy`){
-    //         a.map(b => {
-    //             console.log(b);
-    //         });
-    //     }
-    // });
     return arr.filter(a => {
         if(a.type === `car` && a.make === `chevy`) return a;
-
     });
 
 }
@@ -296,17 +286,21 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    return '';
+    return arr.reduce((acc, a) => {
+        acc += a.model;
+        return acc;
+    }, ``);
 }
 
 /*
 (add all ages)
-
 Output: 14 
  */
 
 export function getSumOfAges(arr) {
-    return 0;
+    return arr.reduce((acc, a) => {
+        return acc += a.age;
+    }, 0);
 }
 
 /*
@@ -320,7 +314,20 @@ Output:
  */
 
 export function makeCountObject(arr) {
-    return {};
+    return arr.reduce((acc, a) => {
+        if(a.type === `car`){
+            acc.car++;
+        } else if (a.type === `truck`){
+            acc.truck++;
+        } else if (a.type === `van`){
+            acc.van++;
+        }
+
+    }, {
+        car: 0,
+        truck: 0,
+        van: 0
+    });
 }
 
 
